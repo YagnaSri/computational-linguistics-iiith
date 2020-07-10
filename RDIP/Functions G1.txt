@@ -1,0 +1,16 @@
+Listing of Functions in the Experiment of Forming Sentences-2 
+Lab-Computational Linguistics Lab
+There is a display of 6 icon towards the left side.
+Each icon has a page mentioned in its anchor tag , when clicked re-directs to the respective page,mentioned in the tag.
+**Introduction**
+**Theory**
+**Objective**
+**Experiment**
+**Quizzes**
+**Procedure**
+In the Experiment page displayed functions are:
+1.There is a display of the selection of language button,when clicked on it, a drop-down menu with two languages is displayed.
+2.On selecting a language, few buttons are displayed which are the words of a sentence that are displayed in jumbled manner.
+3.When one button(word) is pressed, that respective word disappears and is displayed as text below the buttons.
+4.After selecting all the buttons,only then the button for the correctiveness is displayed.On clicking it, if the sentence is structurally correct, then it displays text as "Right Answer" else it displays "Wrong answer" along with another button named "get correct sentence".
+5.On clicking it, displays all the correct sentences. And the button is replaced with another button named "Hide the Correct Sentences".
