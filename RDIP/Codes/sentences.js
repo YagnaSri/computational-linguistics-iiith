@@ -146,15 +146,17 @@ function display()
                  button.appendChild(dis);
                  body.appendChild(button);
 		 count++;
-		console.log(count);
+		//console.log(count);
                 button.addEventListener("click",function(s_s,l){
                 document.getElementById("demo").innerHTML ="Formed Sentence(after selecting words)";
 document.getElementById("reform").innerHTML="<button  id='reform' onclick='reset()'>Re-form the sentence</button>";
                 document.getElementById("dissent").innerHTML+=this.innerHTML+" ";
                this.style.display="none";
                btn++;
-			console.log(btn);
-
+			//console.log(btn);
+                        //console.log(jums_s.length);
+			if(btn == jums_s.length)
+				document.getElementById("check").innerHTML="<button>Check the correctnes of this sentence</button>";
 });
 }
 
