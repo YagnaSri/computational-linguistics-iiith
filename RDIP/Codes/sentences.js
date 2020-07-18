@@ -83,41 +83,22 @@ var allhindi=["राम और श्याम बाजार गयें",
 ]
 
 function display()
+
 {
-        var lang = document.getElementById("select_lang").value;
-       //console.log(lang);
-         if(lang == "Hindi")
+  clear();
+	var lang = document.getElementById("select_lang").value;
+
+	//console.log(lang);
+  
+	if(lang == "Hindi")
       {
     
          document.getElementById("dis1").innerHTML="Form a sentence (Declarative or Interrogative or any other type) from the given          words";
          document.getElementById("dis2").innerHTML="(select the buttons in proper order)";
          var  h = allhindi[Math.floor(Math.random()*allhindi.length)];
-         var h_s=h.split(" ");
-         var k =h_s.length;
-         for(var i=0;i<k;i++)
-          {
-              var  ord =Math.floor(Math.random()*k);
-                 h=h_s[i];
-                h_s[i]=h_s[ord];
-               h_s[ord]=h;
-          }
-        for(var l =0 ;l<k;l++)
-          {
-                 let body = document.getElementsByTagName("body1")[0];
-                 let button = document.createElement("button");
-                 let dis = document.createTextNode(h_s[l]);
-                 button.appendChild(dis);
-                 body.appendChild(button);
-                  button.addEventListener("click",function(h_s,k){
-                document.getElementById("demo").innerHTML ="Formed Sentence(after selecting words)";
-document.getElementById("reform").innerHTML="<button id='reform' >Re-form the sentence</button>";
-                document.getElementById("dissent").innerHTML+=this.innerHTML+" ";
-               this.style.display="none";
-});
-
-
-
-          }
+         var s_s=h.split(" ");
+         jums_s = jumble(s_s);
+	 jumbtn(jums_s);
     }
     else if(lang == "English")
 {
@@ -126,33 +107,72 @@ document.getElementById("reform").innerHTML="<button id='reform' >Re-form the se
 
 
          var  e = allEng[Math.floor(Math.random()*allEng.length)];
-         var e_s=e.split(" ");
-        var l = e_s.length;
-        console.log(e_s);
-        for(var i=0;i<l;i++)
-         {
-              var  ord =Math.floor(Math.random()*e_s.length);
-                 e=e_s[i];
-                e_s[i]=e_s[ord];
-               e_s[ord]=e;
-         }
-        for(var h =0 ;h<l;h++)
-        {
-
-                 let body = document.getElementsByTagName("body1")[0];
-                 let button = document.createElement("button");
-                 let dis = document.createTextNode(e_s[h]);
-                 button.appendChild(dis);
-                 body.appendChild(button);
-                button.addEventListener("click",function(e_s,l){
-                document.getElementById("demo").innerHTML ="Formed Sentence(after selecting words)";
-document.getElementById("reform").innerHTML="<button  id='reform'>Re-form the sentence</button>";
-                document.getElementById("dissent").innerHTML+=this.innerHTML+" ";
-               this.style.display="none";
-
-});
-         }
+         var s_s=e.split(" ");
+	 jums_s = jumble(s_s);
+	 jumbtn(jums_s);
+        console.log(s_s);
 }
-    else if(lang == "---Select Language---")    
+  else if(lang == "---Select Language---")
                 alert("Select a language");
 }
+
+
+	function jumble(array)
+	{
+		
+                l=array.length;
+		console.log(l);
+        for(var i=0;i<l;i++)
+         {
+              var  ord =Math.floor(Math.random()*l);
+                 e=array[i];
+                array[i]=array[ord];
+               array[ord]=e;
+         }
+		return array;
+	}
+	function jumbtn(array)
+	{
+		var count=0;
+		var l = array.length;
+                var btn=0;
+
+        for(var h =0 ;h<l;h++)
+        {
+                
+                 let body = document.getElementById("demo1");
+                 let button = document.createElement("button");
+                 let dis = document.createTextNode(array[h]);
+                 button.appendChild(dis);
+                 body.appendChild(button);
+		 count++;
+		console.log(count);
+                button.addEventListener("click",function(s_s,l){
+                document.getElementById("demo").innerHTML ="Formed Sentence(after selecting words)";
+document.getElementById("reform").innerHTML="<button  id='reform' onclick='reset()'>Re-form the sentence</button>";
+                document.getElementById("dissent").innerHTML+=this.innerHTML+" ";
+               this.style.display="none";
+               btn++;
+			console.log(btn);
+
+});
+}
+
+         }
+
+function reset()
+{
+	clear();
+        document.getElementById("demo1").innerHTML="";
+	jumbtn(jums_s);  
+
+}
+function clear()
+{    
+	btn=0;
+	document.getElementById("demo1").innerHTML="";
+	document.getElementById("demo").innerHTML="";
+	document.getElementById("dissent").innerHTML="";
+	document.getElementById("reform").innerHTML="";
+}
+
