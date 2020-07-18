@@ -184,6 +184,7 @@ function check()
                      }
             }
              document.getElementById('crt').innerHTML= "Wrong Answer";
+             document.getElementById("showbtn").innerHTML="<button >Get Correct Sentence</button>";
 }
 
 
