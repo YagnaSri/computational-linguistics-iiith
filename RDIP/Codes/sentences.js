@@ -157,11 +157,11 @@ function check()
                      var sent=sentence.trim();
               crt = str.localeCompare(sent);
                      if(crt == 0){
-                             document.getElementById('crt').innerHTML ="Right Answer!";
+                             document.getElementById('crt').innerHTML ="<font color='green'>Right Answer!</font>";
                      return;
                      }
             }
-             document.getElementById('crt').innerHTML= "Wrong Answer";
+             document.getElementById('crt').innerHTML= "<font color='red'>Wrong Answer</font>";
              document.getElementById('showbtn').innerHTML="<button onclick='showing()'>Get Correct Sentence</button>";
 document.getElementById("show").innerHTML="";
 }
