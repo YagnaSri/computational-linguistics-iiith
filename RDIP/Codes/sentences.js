@@ -97,7 +97,7 @@ function display()
 	 jumbtn(jums_s);
         console.log(s_s);
 }
-  else if(lang == "---Select Language---")
+  else if(document.getElementById("select_lang").value == "---Select Language---")
                 alert("Select a language");
 }
 
@@ -163,6 +163,7 @@ function check()
             }
              document.getElementById('crt').innerHTML= "Wrong Answer";
              document.getElementById('showbtn').innerHTML="<button onclick='showing()'>Get Correct Sentence</button>";
+document.getElementById("show").innerHTML="";
 }
 
 function showing()
@@ -201,6 +202,7 @@ document.getElementById("show").innerHTML="";
 function toggle(){
 while(document.getElementById("show").innerHTML == ""){
 document.getElementById('showbtn').innerHTML ="<button onclick='hide()'>hide correct answer</button>"
+ 
 }
 }
 
@@ -224,5 +226,5 @@ function clear()
                    document.getElementById("check").innerHTML="";             
                    document.getElementById("crt").innerHTML="";
                     document.getElementById("showbtn").innerHTML="";
-                    document.getElementById("show").innerHTML=""
+                    document.getElementById("show").innerHTML="";
 }
